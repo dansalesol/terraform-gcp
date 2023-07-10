@@ -7,3 +7,5 @@
 3. Salve os arquivos do Estado no Google Cloud Storage.
 
 Submeta o print de cada etapa de configuração do Pipeline .
+
+-----------------------------------Resolução-------------------------------------------
