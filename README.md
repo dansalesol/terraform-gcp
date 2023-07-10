@@ -9,3 +9,6 @@
 Submeta o print de cada etapa de configuração do Pipeline .
 
 -----------------------------------Resolução-------------------------------------------
+1.  O primeiro passo é clonar o repositório do endereço acima.
+
+![Captura de tela de 2023-07-10 14-29-25](https://github.com/dansalesol/terraform-gcp/assets/58992916/d15a6fab-84bf-4510-9051-cd6f4bd0e4af)
