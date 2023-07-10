@@ -80,7 +80,7 @@ resource "google_compute_instance" "vm_instance" {
 
 ![Captura de tela de 2023-07-10 15-15-39](https://github.com/dansalesol/terraform-gcp/assets/58992916/05227048-7e26-4089-9e50-200562056a4e)
 
-6.  Vamos escolhar "enviar códgio a partir de um repositório Git local".
+6.  Vamos escolhar "enviar código a partir de um repositório Git local".
 
 ![Captura de tela de 2023-07-10 15-21-22](https://github.com/dansalesol/terraform-gcp/assets/58992916/4f5884bf-980d-431a-b991-39c45024a099)
 
@@ -109,6 +109,24 @@ Agora podemos dar "push" para salvar no Google Source Repositories.
 Agora os arquivos estão salvos remotamente.
 
 ![Captura de tela de 2023-07-10 15-48-03](https://github.com/dansalesol/terraform-gcp/assets/58992916/ad183782-693a-4dfa-9b60-4ca56dd0929f)
+
+7.  Vamos automatizar o processo com Cloud Build. Neste passo vamos primeiro encontrar o repositório clicando em "gerenciar repositórios" para verificar se o Cloud Build reconheceu o repositório..
+
+![Captura de tela de 2023-07-10 15-53-27](https://github.com/dansalesol/terraform-gcp/assets/58992916/76e43771-3d26-40e2-8708-0392b76d6600)
+
+Repositório encontrado! Vamos agora "criar o gatilho". Usaremos o mesmo nome dado para o repositório e iremos selecionar "enviar para uma ramificação" assim quando for feito um commit novo na brunch master ele irá executar os passos do pipeline. Vamos deixar também o arquivo de instrução como "yaml" com o nome "cloudbuild.yaml". Esse arquivo chamará o Terraform (main.tf) para executar. A conta de serviço que irá acionar será a padrão.
+
+![Captura de tela de 2023-07-10 16-05-40](https://github.com/dansalesol/terraform-gcp/assets/58992916/f99105ab-d68b-4283-9946-3fa33c14cc01)
+
+![Captura de tela de 2023-07-10 16-08-58](https://github.com/dansalesol/terraform-gcp/assets/58992916/0cdcbba1-9da6-47be-ad2e-4b6a2f2fe96a)
+
+![Captura de tela de 2023-07-10 16-07-16](https://github.com/dansalesol/terraform-gcp/assets/58992916/7926ee9b-818f-4a10-86bc-9605566599de)
+
+
+
+
+
+
 
 
 
