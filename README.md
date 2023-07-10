@@ -126,7 +126,11 @@ Repositório encontrado! Vamos agora "criar o gatilho". Usaremos o mesmo nome da
 
 Trigger criada!
 
-8.  Vamos fazer um commit para que a trigger seja disparada. Para tal, faremos uma pequena alteração como adição de um comentário.
+8. Vamos inicializar o Terraform no diretório!
+
+![Captura de tela de 2023-07-10 16-39-53](https://github.com/dansalesol/terraform-gcp/assets/58992916/4aaa0b5a-d740-4e02-937d-5166f34ef76c)
+
+9. Faremos um commit para que a trigger seja disparada. Para tal, faremos uma pequena alteração como adição de um comentário.
 
 ![Captura de tela de 2023-07-10 16-20-29](https://github.com/dansalesol/terraform-gcp/assets/58992916/1124b704-db4a-4652-98fb-b695598b0eae)
 
