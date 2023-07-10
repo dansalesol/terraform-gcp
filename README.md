@@ -122,6 +122,17 @@ Repositório encontrado! Vamos agora "criar o gatilho". Usaremos o mesmo nome da
 
 ![Captura de tela de 2023-07-10 16-07-16](https://github.com/dansalesol/terraform-gcp/assets/58992916/7926ee9b-818f-4a10-86bc-9605566599de)
 
+![Captura de tela de 2023-07-10 16-12-58](https://github.com/dansalesol/terraform-gcp/assets/58992916/97c169da-0539-44da-bdc9-c65391b82607)
+
+Trigger criada!
+
+8.  Vamos fazer um commit para que a trigger seja disparada. Para tal, faremos uma pequena alteração como adição de um comentário.
+
+![Captura de tela de 2023-07-10 16-20-29](https://github.com/dansalesol/terraform-gcp/assets/58992916/1124b704-db4a-4652-98fb-b695598b0eae)
+
+
+
+
 
 
 
