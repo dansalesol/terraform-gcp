@@ -136,16 +136,76 @@ Trigger criada!
 
 Agora vamos clicar em "adicionar chave".
 
-![Captura de tela de 2023-07-11 09-54-54](https://github.com/dansalesol/terraform-gcp/assets/58992916/14909c93-9769-4634-a53e-49245e260522)
+![Captura de tela de 2023-07-11 09-53-45](https://github.com/dansalesol/terraform-gcp/assets/58992916/7bda9fd2-4aa7-4d60-a16d-58348c087027)
+
 
 OBS: A política de segurança por padrão desativa a criação de chaves para contas de serviço, sendo necessário desativar essa política para a organização "sb-devops-iac" para concluirmos o exercício. Desse modo podemos criar a chave.
 
+![Captura de tela de 2023-07-11 09-54-54](https://github.com/dansalesol/terraform-gcp/assets/58992916/6ff2110e-11ef-4a5a-8781-65c0c273d7d3)
 
+![Captura de tela de 2023-07-11 13-21-27](https://github.com/dansalesol/terraform-gcp/assets/58992916/4e9eede2-67de-4795-9717-ba41348e742b)
 
+![Captura de tela de 2023-07-11 13-21-42](https://github.com/dansalesol/terraform-gcp/assets/58992916/250bc01f-2a05-4cb4-8f52-e39e23b0b8d0)
 
+Foi feito o download da chave em nossa máquina. Agora vamos criar o arquivo o arquivo "serviceaccount.yaml" para conter a chave e o arquivo ".gitignore" para não fazer o upload dessa chave, apesar de estarmos utilizando um repositório privado (Google Source Repositories).
 
+![Captura de tela de 2023-07-11 13-37-34](https://github.com/dansalesol/terraform-gcp/assets/58992916/32c2416c-27be-414e-bf66-96bc011767ec)
 
- 
+No arquivo ".gitignore" vamos indicar o arquivo que não deve ser feito o upload que é o "serviceaccount.yaml".
+
+![Captura de tela de 2023-07-11 13-41-35](https://github.com/dansalesol/terraform-gcp/assets/58992916/bbb3a321-bf0a-4dd2-8f5c-5da376e5aae3)
+
+No arquivo "main.tf" alteramos para fazer referência a credencial criada acima:
+```
+terraform {
+  required_providers {
+    google = {
+      source = "hashicorp/google"
+      project = "sb-devops-iac"
+      region = "us-central1"
+      zone = "us-central-c"
+      credentials = "${file("serviceaccount.yaml")}"
+    }
+  }
+
+   backend "gcs" {
+    bucket  = "sbterraform"
+    prefix  = "terraform/state"
+  }
+  
+}
+
+provider "google" {
+  project = "sb-devops-iac"
+  region  = "us-central1"
+  zone    = "us-central1-c"
+}
+
+resource "google_compute_network" "vpc_network" {
+  name = "${var.network_name}"
+}
+
+resource "google_compute_instance" "vm_instance" {
+  name         = "terraform-instance"
+  machine_type = "f1-micro"
+  tags = ["prod"]
+
+  labels = {
+    centro_custo = "${var.centro_custo_rh}"
+  }
+
+  boot_disk {
+    initialize_params {
+      image = "debian-cloud/debian-11"
+    }
+  }
+  network_interface {
+    network = google_compute_network.vpc_network.name
+    access_config {
+    }
+  }
+}
+```
 
 11. Faremos um commit para que a trigger seja disparada. Para tal, faremos uma pequena alteração como adição de um comentário.
 
