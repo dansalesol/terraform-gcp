@@ -130,7 +130,7 @@ Trigger criada!
 
 ![Captura de tela de 2023-07-10 16-39-53](https://github.com/dansalesol/terraform-gcp/assets/58992916/4aaa0b5a-d740-4e02-937d-5166f34ef76c)
 
-9. Antes de rodar a nossa pipeline, precisamos criar uma chave de autenticação para a conta de serviço do terraform. Vamos então no "IAM", "contas de serviço". Vamos clicar em mais opções na conta do terraform e selecionar "gerenciar chaves".
+9. Antes de rodar a nossa pipeline, precisamos criar uma conta de autenticação  e chave para a conta de serviço do terraform. Vamos então no "IAM", "contas de serviço". Vamos clicar em adicionar chave.
 
 ![Captura de tela de 2023-07-11 09-51-52](https://github.com/dansalesol/terraform-gcp/assets/58992916/2c74adbb-6e8d-403d-a6ec-7a4f80a5e75e)
 
