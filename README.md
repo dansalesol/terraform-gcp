@@ -206,7 +206,7 @@ Adicionamos apenas a linha "credentials = "${file("serviceaccount.yaml")}"" em "
 
 11. Faremos um "commit" seguido de "push" para que a trigger seja disparada.
 
-![Captura de tela de 2023-07-10 16-20-29](https://github.com/dansalesol/terraform-gcp/assets/58992916/1124b704-db4a-4652-98fb-b695598b0eae)
+
 
 
 
