@@ -65,7 +65,6 @@ resource "google_compute_instance" "vm_instance" {
   }
 }
 ```
-
 4.  Feito isso, podemos criar nosso bucket no Google Storage para salvar os estados do Terraform. O nome do bucket será "sbterraform".
 
 ![Captura de tela de 2023-07-10 15-07-26](https://github.com/dansalesol/terraform-gcp/assets/58992916/a55461e7-fd60-4079-882f-83560024985f)
@@ -161,10 +160,6 @@ terraform {
   required_providers {
     google = {
       source = "hashicorp/google"
-      project = "sb-devops-iac"
-      region = "us-central1"
-      zone = "us-central-c"
-      credentials = "${file("serviceaccount.yaml")}"
     }
   }
 
@@ -179,6 +174,7 @@ provider "google" {
   project = "sb-devops-iac"
   region  = "us-central1"
   zone    = "us-central1-c"
+  credentials = "${file("serviceaccount.yaml")}"
 }
 
 resource "google_compute_network" "vpc_network" {
@@ -206,8 +202,9 @@ resource "google_compute_instance" "vm_instance" {
   }
 }
 ```
+Adicionamos apenas a linha "credentials = "${file("serviceaccount.yaml")}"" em "provider".
 
-11. Faremos um commit para que a trigger seja disparada. Para tal, faremos uma pequena alteração como adição de um comentário.
+11. Faremos um "commit" seguido de "push" para que a trigger seja disparada.
 
 ![Captura de tela de 2023-07-10 16-20-29](https://github.com/dansalesol/terraform-gcp/assets/58992916/1124b704-db4a-4652-98fb-b695598b0eae)
 
