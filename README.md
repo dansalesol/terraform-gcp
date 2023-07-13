@@ -202,31 +202,6 @@ resource "google_compute_instance" "vm_instance" {
   }
 }
 ```
-Adicionamos apenas a linha "credentials = "${file("serviceaccount.yaml")}"" em "provider".
+Adicionamos apenas a linha "credentials = "${file("serviceaccount.yaml")}"" em "provider". Por fim precisamos colocar esse arquivo que contém a chave (serviceaccount.yaml) no Secret Manager para que não fique exposta ou seja acessada de forma indevida.
 
 11. Faremos um "commit" seguido de "push" para que a trigger seja disparada.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
