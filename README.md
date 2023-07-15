@@ -125,7 +125,7 @@ Repositório encontrado! Vamos agora "criar o gatilho". Usaremos o mesmo nome da
 
 Trigger criada!
 
-8. Vamos inicializar o Terraform no diretório!
+8. Vamos inicializar o Terraform no diretório com "terraform init"!
 
 ![Captura de tela de 2023-07-10 16-39-53](https://github.com/dansalesol/terraform-gcp/assets/58992916/4aaa0b5a-d740-4e02-937d-5166f34ef76c)
 
