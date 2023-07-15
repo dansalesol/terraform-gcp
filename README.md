@@ -89,11 +89,11 @@ Precisamos inicializar nosso Git! Vamos fazer isso de dentro da pasta local do p
 
 ![Captura de tela de 2023-07-10 15-30-46](https://github.com/dansalesol/terraform-gcp/assets/58992916/181822aa-9704-42eb-852f-223e489146e4)
 
-Agora vamos adicionar todos os arquivos com:
+Agora vamos adicionar todos os arquivos com "git add .":
 
 ![Captura de tela de 2023-07-10 15-32-05](https://github.com/dansalesol/terraform-gcp/assets/58992916/8c62b4d2-a0f7-421e-afa4-a2a23af46e05)
 
-Vamos dar um "commit" para versionar os arquivos.
+Vamos dar um "git commit -m "primeira adição"" para versionar os arquivos.
 
 ![Captura de tela de 2023-07-10 15-34-08](https://github.com/dansalesol/terraform-gcp/assets/58992916/5d7c087d-d8e5-409f-94dc-49c10cec5c5f)
 
