@@ -17,7 +17,7 @@ Submeta o print de cada etapa de configuração do Pipeline .
 
 ![Captura de tela de 2023-07-10 14-32-04](https://github.com/dansalesol/terraform-gcp/assets/58992916/2ee2854d-8524-4232-86ae-6c4adf105826)
 
-3.  O próximo passo é alterar o arquivo "main.tf" para o nosso projeto (sb-devops-iac):
+3.  O próximo passo é alterar o arquivo "main.tf" para o nosso projeto (sb-devops-iac) e colocar um nome para nosso bucket que iremos criar no próximo passa (sbterraform):
 
 ```
 terraform {
