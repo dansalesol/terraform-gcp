@@ -85,7 +85,7 @@ resource "google_compute_instance" "vm_instance" {
 
 ![Captura de tela de 2023-07-10 15-25-41](https://github.com/dansalesol/terraform-gcp/assets/58992916/eb452631-bfbb-470a-bd80-618c21915a4b)
 
-Precisamos inicializar nosso Git! Vamos fazer isso de dentro da pasta local do projeto.
+Precisamos inicializar nosso Git! Vamos fazer isso de dentro da pasta local do projeto com "git init".
 
 ![Captura de tela de 2023-07-10 15-30-46](https://github.com/dansalesol/terraform-gcp/assets/58992916/181822aa-9704-42eb-852f-223e489146e4)
 
