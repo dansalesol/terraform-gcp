@@ -101,7 +101,7 @@ Vamos ainda adicionar o repositório com:
 
 ![Captura de tela de 2023-07-10 15-38-23](https://github.com/dansalesol/terraform-gcp/assets/58992916/69303074-6ebf-4b5f-9366-52c96ec4664f)
 
-Agora podemos dar "push" para salvar no Google Source Repositories.
+Agora podemos dar "git push --all google" para salvar no Google Source Repositories.
 
 ![Captura de tela de 2023-07-10 15-46-53](https://github.com/dansalesol/terraform-gcp/assets/58992916/399bd55c-9a24-401c-87a2-f559f2275121)
 
