@@ -221,7 +221,17 @@ OBS: Para que a service account padrão do Cloud Build conseguisse criar foram a
 
 ![Captura de tela de 2023-07-20 15-14-51](https://github.com/dansalesol/terraform-gcp/assets/58992916/bedf8406-9860-49e5-b5d9-5b905f0334d6)
 
-12.  
+![Captura de tela de 2023-07-20 15-19-30](https://github.com/dansalesol/terraform-gcp/assets/58992916/4298c07f-9cbf-49c1-9945-a29974f7e99e)
+
+Perceba que o nome da máquina está como "terraform-instance".
+
+![Captura de tela de 2023-07-20 15-20-56](https://github.com/dansalesol/terraform-gcp/assets/58992916/777e6ab8-99d1-4629-89d8-b9692bede135)
+
+
+12.  Vamos alterar o nome da máquina editando o script em "main.tf" para apenas o trecho
+
+```
+
 
 
 
