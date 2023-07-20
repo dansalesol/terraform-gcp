@@ -152,11 +152,8 @@ Foi feito o download da chave em nossa máquina. Agora vamos criar um "secret" p
 
 ![Captura de tela de 2023-07-19 22-36-55](https://github.com/dansalesol/terraform-gcp/assets/58992916/b1a2c17d-934c-44bc-b260-085a5cbe2471)
 
-+++++
+Agora precisamos alterar novamente o arquivo "main.tf" para que o terraform acesse a credencial e possa criar os recursos. Vamos adicionar em "provider" os escopos e também o bloco "data" que já entrega o secret em "credentials":
 
-![Captura de tela de 2023-07-11 13-41-35](https://github.com/dansalesol/terraform-gcp/assets/58992916/bbb3a321-bf0a-4dd2-8f5c-5da376e5aae3)
-
-No arquivo "main.tf" alteramos para fazer referência a credencial criada acima:
 ```
 terraform {
   required_providers {
@@ -173,10 +170,19 @@ terraform {
 }
 
 provider "google" {
+  scopes = [
+    "https://www.googleapis.com/auth/cloud-platform",
+    "https://www.googleapis.com/auth/userinfo.email",
+  ]
   project = "sb-devops-iac"
   region  = "us-central1"
-  zone    = "us-central1-c"
-  credentials = "${file("serviceaccount.yaml")}"
+  zone    = "us-central1-b"
+}
+
+data "google_secret_manager_secret_version" "credentials" {
+  provider = google
+  secret = "projects/626265470510/secrets/terraform-secret"
+  version = "1"
 }
 
 resource "google_compute_network" "vpc_network" {
@@ -184,9 +190,9 @@ resource "google_compute_network" "vpc_network" {
 }
 
 resource "google_compute_instance" "vm_instance" {
-  name         = "terraform-instance"
-  machine_type = "f1-micro"
-  tags = ["prod"]
+  name          = "terraform-instance"
+  machine_type  = "f1-micro"
+  tags          = ["prod"]
 
   labels = {
     centro_custo = "${var.centro_custo_rh}"
@@ -204,6 +210,5 @@ resource "google_compute_instance" "vm_instance" {
   }
 }
 ```
-Adicionamos apenas a linha "credentials = "${file("serviceaccount.yaml")}"" em "provider". Por fim precisamos colocar esse arquivo que contém a chave (serviceaccount.yaml) no Secret Manager para que não fique exposta ou seja acessada de forma indevida.
 
 11. Faremos um "commit" seguido de "push" para que a trigger seja disparada.
