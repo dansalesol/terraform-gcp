@@ -129,7 +129,9 @@ Trigger criada!
 
 ![Captura de tela de 2023-07-10 16-39-53](https://github.com/dansalesol/terraform-gcp/assets/58992916/4aaa0b5a-d740-4e02-937d-5166f34ef76c)
 
-9. Antes de rodar a nossa pipeline, precisamos criar uma conta de autenticação  e chave para a conta de serviço do terraform. Vamos então no "IAM", "contas de serviço". Vamos clicar em "gerenciar chave".
+9. Antes de rodar a nossa pipeline, precisamos criar uma conta de autenticação e chave para a conta de serviço do terraform. Vamos então no "IAM", "contas de serviço". Vamos clicar em "gerenciar chave".
+
+OBS: Se a conta de serviço do Terraform não estiver criada, basta clicar em "criar conta de serviço" e posteriormente dar as devidas permissões. No nosso caso a conta já estava criada, sendo assim vamos utilizá-la.
 
 ![Captura de tela de 2023-07-11 09-51-52](https://github.com/dansalesol/terraform-gcp/assets/58992916/2c74adbb-6e8d-403d-a6ec-7a4f80a5e75e)
 
@@ -215,7 +217,7 @@ resource "google_compute_instance" "vm_instance" {
 
 ![Captura de tela de 2023-07-20 15-16-46](https://github.com/dansalesol/terraform-gcp/assets/58992916/70f1b672-543d-465d-965d-c7a7291b1efd)
 
-OBS: Para que a service account padrão do Cloud Build conseguisse criar foram adicionadas as permissões correspondentes. No secret o papel "Security Manager Admin (para ter a permissão "secretmanager.versions.get") e a role diretamente na service account "compute.networkAdmin" para ter a permissão "compute.networks.create". Também na conta de serviço do Terraform que criamos acima precisou do papel "Criador do token da conta de serviço". Com as devidas permissões obtivémos exito.
+OBS: Para que a service account padrão do Cloud Build conseguisse criar foram adicionadas as permissões correspondentes. No secret o papel "Security Manager Admin (para ter a permissão "secretmanager.versions.get") e a role diretamente na service account "compute.networkAdmin" para ter a permissão "compute.networks.create". Também na conta de serviço do Terraform precisou do papel "Criador do token da conta de serviço". Com as devidas permissões obtivémos exito.
 
 ![Captura de tela de 2023-07-20 15-13-42](https://github.com/dansalesol/terraform-gcp/assets/58992916/7fc8710d-936a-4dc3-9a38-54d9d45fabfe)
 
