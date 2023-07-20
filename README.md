@@ -146,11 +146,13 @@ OBS: A política de segurança por padrão desativa a criação de chaves para c
 
 ![Captura de tela de 2023-07-11 13-21-42](https://github.com/dansalesol/terraform-gcp/assets/58992916/250bc01f-2a05-4cb4-8f52-e39e23b0b8d0)
 
-Foi feito o download da chave em nossa máquina. Agora vamos criar o arquivo o arquivo "serviceaccount.yaml" para conter a chave e o arquivo ".gitignore" para não fazer o upload dessa chave, apesar de estarmos utilizando um repositório privado (Google Source Repositories).
+Foi feito o download da chave em nossa máquina. Agora vamos criar um "secret" para conter a chave no Secret Manager (basta pesquisar por esse nome). Não queremos salvar o arquivo que contém a chave diretamente no repositório, apesar de estarmos utilizando um repositório privado (Google Source Repositories). Também não poderíamos utilizar a chave salva em um arquivo "serviceaccount.yaml" e um ".gitignore", pois o pipeline não teria acesso a esse arquivo do mesmo jeito. Sendo assim vamos criar o secret:
 
-![Captura de tela de 2023-07-11 13-37-34](https://github.com/dansalesol/terraform-gcp/assets/58992916/32c2416c-27be-414e-bf66-96bc011767ec)
+![Captura de tela de 2023-07-19 22-34-10](https://github.com/dansalesol/terraform-gcp/assets/58992916/8c569187-0422-4d4f-bf0e-cebf603d9266)
 
-No arquivo ".gitignore" vamos indicar o arquivo que não deve ser feito o upload que é o "serviceaccount.yaml".
+![Captura de tela de 2023-07-19 22-36-55](https://github.com/dansalesol/terraform-gcp/assets/58992916/b1a2c17d-934c-44bc-b260-085a5cbe2471)
+
++++++
 
 ![Captura de tela de 2023-07-11 13-41-35](https://github.com/dansalesol/terraform-gcp/assets/58992916/bbb3a321-bf0a-4dd2-8f5c-5da376e5aae3)
 
