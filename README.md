@@ -211,4 +211,6 @@ resource "google_compute_instance" "vm_instance" {
 }
 ```
 
-11. Faremos um "commit" seguido de "push" para que a trigger seja disparada.
+11. Agora faremos um "git add ." seguido de 'git commit -m "alteracao final"' e um "git push --all google" para que a trigger seja disparada.
+
+
