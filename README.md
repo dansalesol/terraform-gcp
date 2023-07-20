@@ -213,4 +213,18 @@ resource "google_compute_instance" "vm_instance" {
 
 11. Agora faremos um "git add ." seguido de 'git commit -m "alteracao final"' e um "git push --all google" para que a trigger seja disparada.
 
+OBS: Para que a service account padrão do Cloud Build conseguisse criar foram adicionadas as permissões correspondentes. No secret o papel "Security Manager Admin (para ter a permissão "secretmanager.versions.get") e a role diretamente na service account "compute.networkAdmin" para ter a permissão "compute.networks.create". Também na conta de serviço do Terraform que criamos acima precisou do papel "Criador do token da conta de serviço". Com as devidas permissões obtivémos exito.
+
+![Captura de tela de 2023-07-20 15-13-42](https://github.com/dansalesol/terraform-gcp/assets/58992916/7fc8710d-936a-4dc3-9a38-54d9d45fabfe)
+
+![Captura de tela de 2023-07-20 15-14-51](https://github.com/dansalesol/terraform-gcp/assets/58992916/bedf8406-9860-49e5-b5d9-5b905f0334d6)
+
+12.  
+
+
+
+
+
+
+
 
