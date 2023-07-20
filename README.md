@@ -228,11 +228,27 @@ Perceba que o nome da máquina está como "terraform-instance".
 ![Captura de tela de 2023-07-20 15-20-56](https://github.com/dansalesol/terraform-gcp/assets/58992916/777e6ab8-99d1-4629-89d8-b9692bede135)
 
 
-12.  Vamos alterar o nome da máquina editando o script em "main.tf" para apenas o trecho
+12.  Vamos alterar o nome da máquina para "cloudbbuildterraform" editando o script em "main.tf" para apenas o trecho:
 
 ```
+resource "google_compute_instance" "vm_instance" {
+  name          = "cloudbbuildterraform"
+  machine_type  = "f1-micro"
+  tags          = ["prod"]
 
+  labels = {
+    centro_custo = "${var.centro_custo_rh}"
+  }
+```
+Perceba no resumo da criação no campo "name" a sentença '"terraform-instance" -> "cloudbbuildterraform" # forces replacement'.
 
+![Captura de tela de 2023-07-20 15-31-16](https://github.com/dansalesol/terraform-gcp/assets/58992916/11fa7460-e869-45a6-bf59-21c7827f313a)
+
+![Captura de tela de 2023-07-20 15-33-42](https://github.com/dansalesol/terraform-gcp/assets/58992916/efebef77-51a6-49f5-964c-4bc3b8dc7616)
+
+![Captura de tela de 2023-07-20 15-34-28](https://github.com/dansalesol/terraform-gcp/assets/58992916/8b350fa3-0073-4fda-9363-06c0f98de3ad)
+
+Com isso concluímos o desafio!
 
 
 
